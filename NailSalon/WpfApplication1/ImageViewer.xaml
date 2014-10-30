@@ -1,0 +1,17 @@
+﻿<Window x:Class="NailSalon.ImageViewer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Images" Height="398" Width="715" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Row="0">
+            <Button Name="btnAdd" Content="Add picture" DockPanel.Dock="Left" HorizontalAlignment="Left" Click="btnAdd_Click"/>
+            <Button Name="btnDelete" Content="Delete picture" DockPanel.Dock="Right" HorizontalAlignment="Right" Click="btnDelete_Click"/>
+        </DockPanel>
+        <WrapPanel Grid.Row="1" Name="wrpImg" Margin="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        
+    </Grid>
+</Window>

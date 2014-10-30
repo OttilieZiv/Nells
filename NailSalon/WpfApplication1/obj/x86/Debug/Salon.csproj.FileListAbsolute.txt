@@ -1,0 +1,91 @@
+c:\users\ottilie\documents\visual studio 2010\Projects\WpfApplication1\WpfApplication1\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\users\ottilie\documents\visual studio 2010\Projects\WpfApplication1\WpfApplication1\obj\x86\Debug\MainWindow.baml
+c:\users\ottilie\documents\visual studio 2010\Projects\WpfApplication1\WpfApplication1\obj\x86\Debug\MainWindow.g.cs
+c:\users\ottilie\documents\visual studio 2010\Projects\WpfApplication1\WpfApplication1\obj\x86\Debug\App.g.cs
+c:\users\ottilie\documents\visual studio 2010\Projects\WpfApplication1\WpfApplication1\obj\x86\Debug\GenerateResource.read.1.tlog
+c:\users\ottilie\documents\visual studio 2010\Projects\WpfApplication1\WpfApplication1\obj\x86\Debug\GenerateResource.write.1.tlog
+c:\users\ottilie\documents\visual studio 2010\Projects\WpfApplication1\WpfApplication1\bin\Debug\NailSalon.exe.config
+c:\users\ottilie\documents\visual studio 2010\Projects\WpfApplication1\WpfApplication1\obj\x86\Debug\NailSalon_MarkupCompile.cache
+c:\users\ottilie\documents\visual studio 2010\Projects\WpfApplication1\WpfApplication1\obj\x86\Debug\NailSalon.g.resources
+c:\users\ottilie\documents\visual studio 2010\Projects\WpfApplication1\WpfApplication1\obj\x86\Debug\NailSalon.Properties.Resources.resources
+c:\users\ottilie\documents\visual studio 2010\Projects\WpfApplication1\WpfApplication1\bin\Debug\NailSalon.exe
+c:\users\ottilie\documents\visual studio 2010\Projects\WpfApplication1\WpfApplication1\bin\Debug\NailSalon.pdb
+c:\users\ottilie\documents\visual studio 2010\Projects\WpfApplication1\WpfApplication1\obj\x86\Debug\NailSalon.exe
+c:\users\ottilie\documents\visual studio 2010\Projects\WpfApplication1\WpfApplication1\obj\x86\Debug\NailSalon.pdb
+c:\users\ottilie\documents\visual studio 2010\Projects\WpfApplication1\WpfApplication1\obj\x86\Debug\EditWindow.baml
+c:\users\ottilie\documents\visual studio 2010\Projects\WpfApplication1\WpfApplication1\obj\x86\Debug\EditWindow.g.cs
+C:\Users\Ottilie\Documents\Visual Studio 2010\Projects\WpfApplication1\WpfApplication1\obj\x86\Debug\StashBrowser.baml
+C:\Users\Ottilie\Documents\Visual Studio 2010\Projects\WpfApplication1\WpfApplication1\obj\x86\Debug\StashBrowser.g.cs
+C:\Users\Ottilie\Documents\Visual Studio 2010\Projects\WpfApplication1\WpfApplication1\obj\x86\Debug\MyDictionary.baml
+C:\Users\Ottilie\Documents\Visual Studio 2010\Projects\WpfApplication1\WpfApplication1\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Ottilie\Documents\Visual Studio 2010\Projects\WpfApplication1\WpfApplication1\obj\x86\Debug\NailSalon_MarkupCompile.lref
+C:\Users\Ottilie\Documents\Visual Studio 2010\Projects\WpfApplication1\WpfApplication1\obj\x86\Debug\OrderBrowser.g.cs
+C:\Users\Ottilie\Documents\Visual Studio 2010\Projects\WpfApplication1\WpfApplication1\obj\x86\Debug\OrderBrowser.baml
+C:\Users\Ottilie\Documents\Visual Studio 2010\Projects\WpfApplication1\WpfApplication1\obj\x86\Debug\BottleNotes.g.cs
+C:\Users\Ottilie\Documents\Visual Studio 2010\Projects\WpfApplication1\WpfApplication1\obj\x86\Debug\BottleNotes.baml
+C:\Users\Ottilie\Documents\Visual Studio 2010\Projects\WpfApplication1\WpfApplication1\obj\x86\Debug\ReportViewer.baml
+C:\Users\Ottilie\Documents\Visual Studio 2010\Projects\WpfApplication1\WpfApplication1\obj\x86\Debug\ReportViewer.g.cs
+C:\Users\Ottilie\Documents\Visual Studio 2010\Projects\WpfApplication1\WpfApplication1\obj\x86\Debug\App.baml
+C:\Users\Ottilie\Documents\Visual Studio 2010\Projects\WpfApplication1\WpfApplication1\obj\x86\Debug\ucBottleView.g.cs
+C:\Users\Ottilie\Documents\Visual Studio 2010\Projects\WpfApplication1\WpfApplication1\obj\x86\Debug\ucBottleView.baml
+C:\Users\Ottilie\Documents\Visual Studio 2010\Projects\WpfApplication1\WpfApplication1\obj\x86\Debug\BrandCollection.baml
+C:\Users\Ottilie\Documents\Visual Studio 2010\Projects\WpfApplication1\WpfApplication1\obj\x86\Debug\BrandCollection.g.cs
+C:\Users\Ottilie\Documents\Visual Studio 2010\Projects\WpfApplication1\WpfApplication1\obj\x86\Debug\TagEditor.baml
+C:\Users\Ottilie\Documents\Visual Studio 2010\Projects\WpfApplication1\WpfApplication1\obj\x86\Debug\TagEditor.g.cs
+C:\Users\Ottilie\Documents\Visual Studio 2010\Projects\WpfApplication1\WpfApplication1\obj\x86\Debug\LemmingBrowser.g.cs
+C:\Users\Ottilie\Documents\Visual Studio 2010\Projects\WpfApplication1\WpfApplication1\obj\x86\Debug\LemmingBrowser.baml
+C:\Users\Ottilie\Documents\Visual Studio 2010\Projects\WpfApplication1\WpfApplication1\obj\x86\Debug\ucManiEditor.baml
+C:\Users\Ottilie\Documents\Visual Studio 2010\Projects\WpfApplication1\WpfApplication1\obj\x86\Debug\ucManiView.baml
+C:\Users\Ottilie\Documents\Visual Studio 2010\Projects\WpfApplication1\WpfApplication1\obj\x86\Debug\ucManiEditor.g.cs
+C:\Users\Ottilie\Documents\Visual Studio 2010\Projects\WpfApplication1\WpfApplication1\obj\x86\Debug\ucManiView.g.cs
+C:\Users\Ottilie\Documents\Visual Studio 2010\Projects\WpfApplication1\WpfApplication1\obj\x86\Debug\ManiManager.baml
+C:\Users\Ottilie\Documents\Visual Studio 2010\Projects\WpfApplication1\WpfApplication1\obj\x86\Debug\ManiManager.g.cs
+C:\Users\Ottilie\Documents\Visual Studio 2010\Projects\WpfApplication1\WpfApplication1\obj\x86\Debug\ImageViewer.baml
+C:\Users\Ottilie\Documents\Visual Studio 2010\Projects\WpfApplication1\WpfApplication1\obj\x86\Debug\ImageViewer.g.cs
+C:\Users\Ottilie\Documents\Visual Studio 2010\Projects\WpfApplication1\WpfApplication1\obj\x86\Debug\Usercontrols\ucBrandPickerWithAdd.baml
+C:\Users\Ottilie\Documents\Visual Studio 2010\Projects\WpfApplication1\WpfApplication1\obj\x86\Debug\Usercontrols\ucBrandPickerWithAdd.g.cs
+F:\Ottilie\Code repo\NailSalon\WpfApplication1\bin\Debug\NailSalon.exe.config
+F:\Ottilie\Code repo\NailSalon\WpfApplication1\bin\Debug\NailSalon.exe
+F:\Ottilie\Code repo\NailSalon\WpfApplication1\bin\Debug\NailSalon.pdb
+F:\Ottilie\Code repo\NailSalon\WpfApplication1\obj\x86\Debug\BrandCollection.baml
+F:\Ottilie\Code repo\NailSalon\WpfApplication1\obj\x86\Debug\ImageViewer.baml
+F:\Ottilie\Code repo\NailSalon\WpfApplication1\obj\x86\Debug\MainWindow.baml
+F:\Ottilie\Code repo\NailSalon\WpfApplication1\obj\x86\Debug\ManiManager.baml
+F:\Ottilie\Code repo\NailSalon\WpfApplication1\obj\x86\Debug\MyDictionary.baml
+F:\Ottilie\Code repo\NailSalon\WpfApplication1\obj\x86\Debug\ReportViewer.baml
+F:\Ottilie\Code repo\NailSalon\WpfApplication1\obj\x86\Debug\TagEditor.baml
+F:\Ottilie\Code repo\NailSalon\WpfApplication1\obj\x86\Debug\Usercontrols\ucBrandPickerWithAdd.baml
+F:\Ottilie\Code repo\NailSalon\WpfApplication1\obj\x86\Debug\App.baml
+F:\Ottilie\Code repo\NailSalon\WpfApplication1\obj\x86\Debug\BottleNotes.g.cs
+F:\Ottilie\Code repo\NailSalon\WpfApplication1\obj\x86\Debug\BrandCollection.g.cs
+F:\Ottilie\Code repo\NailSalon\WpfApplication1\obj\x86\Debug\ImageViewer.g.cs
+F:\Ottilie\Code repo\NailSalon\WpfApplication1\obj\x86\Debug\LemmingBrowser.g.cs
+F:\Ottilie\Code repo\NailSalon\WpfApplication1\obj\x86\Debug\EditWindow.g.cs
+F:\Ottilie\Code repo\NailSalon\WpfApplication1\obj\x86\Debug\MainWindow.g.cs
+F:\Ottilie\Code repo\NailSalon\WpfApplication1\obj\x86\Debug\ManiManager.g.cs
+F:\Ottilie\Code repo\NailSalon\WpfApplication1\obj\x86\Debug\OrderBrowser.g.cs
+F:\Ottilie\Code repo\NailSalon\WpfApplication1\obj\x86\Debug\ReportViewer.g.cs
+F:\Ottilie\Code repo\NailSalon\WpfApplication1\obj\x86\Debug\StashBrowser.g.cs
+F:\Ottilie\Code repo\NailSalon\WpfApplication1\obj\x86\Debug\TagEditor.g.cs
+F:\Ottilie\Code repo\NailSalon\WpfApplication1\obj\x86\Debug\ucBottleView.g.cs
+F:\Ottilie\Code repo\NailSalon\WpfApplication1\obj\x86\Debug\ucManiEditor.g.cs
+F:\Ottilie\Code repo\NailSalon\WpfApplication1\obj\x86\Debug\ucManiView.g.cs
+F:\Ottilie\Code repo\NailSalon\WpfApplication1\obj\x86\Debug\Usercontrols\ucBrandPickerWithAdd.g.cs
+F:\Ottilie\Code repo\NailSalon\WpfApplication1\obj\x86\Debug\App.g.cs
+F:\Ottilie\Code repo\NailSalon\WpfApplication1\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+F:\Ottilie\Code repo\NailSalon\WpfApplication1\obj\x86\Debug\NailSalon_MarkupCompile.cache
+F:\Ottilie\Code repo\NailSalon\WpfApplication1\obj\x86\Debug\NailSalon_MarkupCompile.lref
+F:\Ottilie\Code repo\NailSalon\WpfApplication1\obj\x86\Debug\BottleNotes.baml
+F:\Ottilie\Code repo\NailSalon\WpfApplication1\obj\x86\Debug\LemmingBrowser.baml
+F:\Ottilie\Code repo\NailSalon\WpfApplication1\obj\x86\Debug\EditWindow.baml
+F:\Ottilie\Code repo\NailSalon\WpfApplication1\obj\x86\Debug\OrderBrowser.baml
+F:\Ottilie\Code repo\NailSalon\WpfApplication1\obj\x86\Debug\StashBrowser.baml
+F:\Ottilie\Code repo\NailSalon\WpfApplication1\obj\x86\Debug\ucBottleView.baml
+F:\Ottilie\Code repo\NailSalon\WpfApplication1\obj\x86\Debug\ucManiEditor.baml
+F:\Ottilie\Code repo\NailSalon\WpfApplication1\obj\x86\Debug\ucManiView.baml
+F:\Ottilie\Code repo\NailSalon\WpfApplication1\obj\x86\Debug\NailSalon.g.resources
+F:\Ottilie\Code repo\NailSalon\WpfApplication1\obj\x86\Debug\NailSalon.Properties.Resources.resources
+F:\Ottilie\Code repo\NailSalon\WpfApplication1\obj\x86\Debug\Salon.csproj.GenerateResource.Cache
+F:\Ottilie\Code repo\NailSalon\WpfApplication1\obj\x86\Debug\NailSalon.exe
+F:\Ottilie\Code repo\NailSalon\WpfApplication1\obj\x86\Debug\NailSalon.pdb
+F:\Ottilie\Code repo\NailSalon\WpfApplication1\obj\x86\Debug\Salon.csprojResolveAssemblyReference.cache

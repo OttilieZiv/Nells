@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="NellsModelStoreContainer" CdmEntityContainer="NellsEntities">
+    <EntitySetMapping Name="bottles">
+      <EntityTypeMapping TypeName="NellsModel.bottle">
+        <MappingFragment StoreEntitySet="bottles">
+          <ScalarProperty Name="Goon" ColumnName="Goon" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="BrandID" ColumnName="BrandID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="SwatchNotes" ColumnName="SwatchNotes" />
+          <ScalarProperty Name="SwatchCoats" ColumnName="SwatchCoats" />
+          <ScalarProperty Name="SwatchDrawer" ColumnName="SwatchDrawer" />
+          <ScalarProperty Name="DateAcquired" ColumnName="DateAcquired" />
+          <ScalarProperty Name="Used" ColumnName="Used" />
+          <ScalarProperty Name="Purged" ColumnName="Purged" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="bottletaglookups">
+      <EntityTypeMapping TypeName="NellsModel.bottletaglookup">
+        <MappingFragment StoreEntitySet="bottletaglookup">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="BottleID" ColumnName="BottleID" />
+          <ScalarProperty Name="TagID" ColumnName="TagID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="bottletags">
+      <EntityTypeMapping TypeName="NellsModel.bottletag">
+        <MappingFragment StoreEntitySet="bottletags">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TagName" ColumnName="TagName" />
+          <ScalarProperty Name="TagType" ColumnName="TagType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="bottletagtypes">
+      <EntityTypeMapping TypeName="NellsModel.bottletagtype">
+        <MappingFragment StoreEntitySet="bottletagtypes">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="brands">
+      <EntityTypeMapping TypeName="NellsModel.brand">
+        <MappingFragment StoreEntitySet="brands">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="OriginCountry" ColumnName="OriginCountry" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="drawers">
+      <EntityTypeMapping TypeName="NellsModel.drawer">
+        <MappingFragment StoreEntitySet="drawers">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DrawerName" ColumnName="DrawerName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="lemmings">
+      <EntityTypeMapping TypeName="NellsModel.lemming">
+        <MappingFragment StoreEntitySet="lemmings">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="BrandID" ColumnName="BrandID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="LustLevel" ColumnName="LustLevel" />
+          <ScalarProperty Name="Killed" ColumnName="Killed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="notes">
+      <EntityTypeMapping TypeName="NellsModel.note">
+        <MappingFragment StoreEntitySet="notes">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="BottleID" ColumnName="BottleID" />
+          <ScalarProperty Name="NoteDate" ColumnName="NoteDate" />
+          <ScalarProperty Name="NoteText" ColumnName="NoteText" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ordereds">
+      <EntityTypeMapping TypeName="NellsModel.ordered">
+        <MappingFragment StoreEntitySet="ordered">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="BrandID" ColumnName="BrandID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="DateOrdered" ColumnName="DateOrdered" />
+          <ScalarProperty Name="Received" ColumnName="Received" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="RPT_BrandCount" FunctionName="NellsModel.Store.RPT_BrandCount">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="NellsModel.RPT_BrandCount_Result">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="count" ColumnName="count" />
+          <ScalarProperty Name="used" ColumnName="used" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="RPT_BrandCountSubset" FunctionName="NellsModel.Store.RPT_BrandCountSubset">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="NellsModel.RPT_BrandCountSubset_Result">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="count" ColumnName="count" />
+          <ScalarProperty Name="used" ColumnName="used" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="RPT_BrandTypeCount" FunctionName="NellsModel.Store.RPT_BrandTypeCount">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="NellsModel.RPT_BrandTypeCount_Result">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="count" ColumnName="count" />
+          <ScalarProperty Name="used" ColumnName="used" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="RPT_CountryCount" FunctionName="NellsModel.Store.RPT_CountryCount">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="NellsModel.RPT_CountryCount_Result">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="count" ColumnName="count" />
+          <ScalarProperty Name="used" ColumnName="used" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="RPT_DrawerCount" FunctionName="NellsModel.Store.RPT_DrawerCount">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="NellsModel.RPT_DrawerCount_Result">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="count" ColumnName="count" />
+          <ScalarProperty Name="used" ColumnName="used" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="RPT_FullyUsedBrandList" FunctionName="NellsModel.Store.RPT_FullyUsedBrandList" />
+    <FunctionImportMapping FunctionImportName="RPT_FullyUsedBrands" FunctionName="NellsModel.Store.RPT_FullyUsedBrands" />
+    <FunctionImportMapping FunctionImportName="RPT_TaglessBottles" FunctionName="NellsModel.Store.RPT_TaglessBottles">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="NellsModel.RPT_TaglessBottles_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="brand" ColumnName="brand" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="SwatchNotes" ColumnName="SwatchNotes" />
+          <ScalarProperty Name="SwatchCoats" ColumnName="SwatchCoats" />
+          <ScalarProperty Name="Used" ColumnName="Used" />
+          <ScalarProperty Name="drawer" ColumnName="drawer" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="RPT_UnusedBrandList" FunctionName="NellsModel.Store.RPT_UnusedBrandList" />
+    <FunctionImportMapping FunctionImportName="RPT_UnusedBrands" FunctionName="NellsModel.Store.RPT_UnusedBrands" />
+  </EntityContainerMapping>
+</Mapping>

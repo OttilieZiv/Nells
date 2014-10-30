@@ -1,0 +1,59 @@
+﻿<Window x:Class="NailSalon.StashBrowser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Stash Browser" Height="363" Width="800" WindowState="Maximized" Loaded="Window_Loaded" xmlns:my="clr-namespace:NailSalon">
+    <Window.Resources>
+        <my:DataSet1 x:Key="dataSet1" />
+        <CollectionViewSource x:Key="bottlesViewSource" Source="{Binding Path=bottles, Source={StaticResource dataSet1}}" />
+        <CollectionViewSource x:Key="bottleSearchViewSource" Source="{Binding Path=BottleSearch, Source={StaticResource dataSet1}}" />
+    </Window.Resources>
+    <Grid DataContext="{StaticResource bottlesViewSource}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Row="0">
+            <Label Content="General:" DockPanel.Dock="Left" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <TextBox Name="txtSearch" DockPanel.Dock="Left" Width="100" HorizontalAlignment="Left" KeyDown="txtSearch_KeyDown" />
+            <ComboBox Name="cmbBrand" DockPanel.Dock="Left" HorizontalAlignment="Left" Width="auto"/>
+            <ComboBox Name="cmbDrawer" DockPanel.Dock="Left" HorizontalAlignment="Left" Width="auto"/>
+            <ComboBox Name="cmbTag" DockPanel.Dock="Left" HorizontalAlignment="Left" Width="auto"/>
+            <ComboBox Name="cmbCountry" DockPanel.Dock="Left" HorizontalAlignment="Left" Width="auto"/>
+            <ComboBox Name="cmbType" DockPanel.Dock="Left" HorizontalAlignment="Left" Width="auto"/>
+            <Button Content="All" Name="btnUsedFilter" DockPanel.Dock="Left" HorizontalAlignment="Left" Width="auto" Click="btnUsedFilter_Click" />
+            <Button Name="btnSearch" Content="Go" Width="30" HorizontalAlignment="Left"  DockPanel.Dock="Left" Click="btnSearch_Click" />
+            <TextBox Name="txtTag" DockPanel.Dock="Right" HorizontalAlignment="Right" VerticalAlignment="Center" Width="100" KeyDown="txtTag_KeyDown"/>
+            <Label Content="Tag:" DockPanel.Dock="Right" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <Button Name="btnBrandFancy" Content="View brand collection" DockPanel.Dock="Right" HorizontalAlignment="Right" Click="btnBrandFancy_Click" />
+        </DockPanel>
+        <DataGrid Name="dgvBottles" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" RowDetailsVisibilityMode="VisibleWhenSelected" CanUserAddRows="False" CanUserDeleteRows="False" RowBackground="White" IsReadOnly="True">
+            <DataGrid.AlternatingRowBackground>
+                <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                    <GradientStop Color="#2F5592FF" Offset="0" />
+                    <GradientStop Color="#FFB3FFFF" Offset="0.622" />
+                </LinearGradientBrush>
+            </DataGrid.AlternatingRowBackground>
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="iDColumn" Binding="{Binding Path=ID}" Header="ID" Width="30" />
+                <DataGridTextColumn x:Name="brandColumn" Binding="{Binding Path=brand}" Header="Brand" Width="130" />
+                <DataGridTextColumn x:Name="nameColumn" Binding="{Binding Path=name}" Header="Name" Width="170" />
+                <DataGridTextColumn x:Name="swatchcoatsColumn" Binding="{Binding Path=swatchcoats}" Header="Coats" Width="50" />
+                <DataGridTextColumn x:Name="descriptionColumn" Binding="{Binding Path=description}" Header="Description" Width="300" />
+                <DataGridTextColumn x:Name="swatchnotesColumn" Binding="{Binding Path=swatchnotes}" Header="Swatch notes" Width="*"/>
+                <DataGridCheckBoxColumn x:Name="usedColumn" Binding="{Binding Path=used}" Header="Used?" Width="SizeToHeader" />
+                <DataGridTextColumn x:Name="drawerColumn" Binding="{Binding Path=drawer}" Header="Drawer" Width="120" />
+            </DataGrid.Columns>
+            <DataGrid.ContextMenu>
+                <ContextMenu Name="mnuGrid" ContextMenuOpening="mnuGrid_ContextMenuOpening" Opened="mnuGrid_Opened">
+                    <MenuItem Name="btnEdit" Click="btnEdit_Click" Header="Edit" />
+                    <MenuItem Name="btnNotes" Header="Notes" Click="btnNotes_Click" />
+                    <MenuItem Name="btnTag" Header="Add tag" Click="btnTag_Click"/>
+                    <MenuItem Name="btnMultiTag" Header="Add tag to multiple items" Click="btnMultiTag_Click"/>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+        </DataGrid>
+    </Grid>
+</Window>

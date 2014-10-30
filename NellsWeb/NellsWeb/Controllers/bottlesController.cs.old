@@ -1,0 +1,161 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
+using System.Linq;
+using System.Net;
+using System.Web;
+using System.Web.Mvc;
+using NellsWeb.Models;
+
+namespace NellsWeb.Controllers
+{
+    public class bottlesController : Controller
+    {
+        private NellsEntities db = new NellsEntities();
+
+        // GET: bottles
+        public ActionResult Index()
+        {
+            var bottles = db.bottles.Include(b => b.brand).Include(b => b.drawer);
+            return View(bottles.ToList());
+        }
+
+        // GET: bottles/Details/5
+        public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            bottle bottle = db.bottles.Find(id);
+            if (bottle == null)
+            {
+                return HttpNotFound();
+            }
+            return View(bottle);
+        }
+
+        // GET: bottles/Create
+        public ActionResult Create()
+        {
+            ViewBag.BrandID = new SelectList(db.brands, "ID", "Name");
+            ViewBag.SwatchDrawer = new SelectList(db.drawers, "ID", "DrawerName");
+            return View();
+        }
+
+        // POST: bottles/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "BrandID,Name,Description,SwatchNotes,SwatchCoats,SwatchDrawer,DateAcquired,Used,Purged,Goon")] bottle bottle)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    db.bottles.Add(bottle);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+
+                ViewBag.BrandID = new SelectList(db.brands, "ID", "Name", bottle.BrandID);
+                ViewBag.SwatchDrawer = new SelectList(db.drawers, "ID", "DrawerName", bottle.SwatchDrawer);
+            }
+            catch (DataException)
+            {
+                ModelState.AddModelError("", "It done fucked up dude");
+            }
+            return View(bottle);
+        }
+
+        // GET: bottles/Edit/5
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            bottle bottle = db.bottles.Find(id);
+            if (bottle == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.BrandID = new SelectList(db.brands, "ID", "Name", bottle.BrandID);
+            ViewBag.SwatchDrawer = new SelectList(db.drawers, "ID", "DrawerName", bottle.SwatchDrawer);
+            return View(bottle);
+        }
+
+        // POST: bottles/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "ID,BrandID,Name,Description,SwatchNotes,SwatchCoats,SwatchDrawer,DateAcquired,Used,Purged,Goon")] bottle bottle)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    db.Entry(bottle).State = EntityState.Modified;
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                ViewBag.BrandID = new SelectList(db.brands, "ID", "Name", bottle.BrandID);
+                ViewBag.SwatchDrawer = new SelectList(db.drawers, "ID", "DrawerName", bottle.SwatchDrawer);
+            }
+            catch (DataException)
+            {
+                ModelState.AddModelError("", "It done fucked up dude");
+            }
+            return View(bottle);
+        }
+
+        // GET: bottles/Delete/5
+        public ActionResult Delete(int? id, bool? saveChangesError = false)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            if (saveChangesError.GetValueOrDefault())
+            {
+                ViewBag.ErrorMessage = "Delete failed. Try again, and if the problem persists start fuckin' prayin'.";
+            }
+            bottle bottle = db.bottles.Find(id);
+            if (bottle == null)
+            {
+                return HttpNotFound();
+            }
+            return View(bottle);
+        }
+
+        // POST: bottles/Delete/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete(int id)
+        {
+            try
+            {
+                bottle bottle = db.bottles.Find(id);
+                db.bottles.Remove(bottle);
+                db.SaveChanges();
+            }
+            catch (DataException)
+            {
+                return RedirectToAction("Delete", new { id = id, saveChangesError = true });
+            }
+            return RedirectToAction("Index");
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+    }
+}

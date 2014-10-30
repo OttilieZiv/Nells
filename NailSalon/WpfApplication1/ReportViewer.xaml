@@ -1,0 +1,25 @@
+﻿<Window x:Class="NailSalon.ReportViewer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ReportViewer" Height="315" Width="628" WindowState="Maximized">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <DockPanel Grid.Column="0">
+            <Button DockPanel.Dock="Top" Name="btnBrandAnalysis" HorizontalAlignment="Stretch" VerticalAlignment="Top" Content="Brands" Click="btnBrandAnalysis_Click" />
+            <Button DockPanel.Dock="Top" Name="btnBrandsAM" HorizontalAlignment="Stretch" VerticalAlignment="Top" Content="Brands - A-K" Click="btnBrandsAM_Click"/>
+            <Button DockPanel.Dock="Top" Name="btnBrandsNZ" HorizontalAlignment="Stretch" VerticalAlignment="Top" Content="Brands - L-Z" Click="btnBrandsNZ_Click"/>
+            <Button DockPanel.Dock="Top" Name="btnColours" HorizontalAlignment="Stretch" VerticalAlignment="Top" Content="Colours" Click="btnColours_Click" />
+            <Button DockPanel.Dock="Top" Name="btnCountry" HorizontalAlignment="Stretch" VerticalAlignment="Top" Content="Countries" Click="btnCountry_Click"/>
+            <Button DockPanel.Dock="Top" Name="btnBrandType" HorizontalAlignment="Stretch" VerticalAlignment="Top" Content="Brand Types" Click="btnBrandType_Click"/>
+            <Button DockPanel.Dock="Top" Name="btnBrandCountryProportions" HorizontalAlignment="Stretch" VerticalAlignment="Top" Content="Brands per country" Click="btnBrandCountryProportions_Click"/>
+            <Button DockPanel.Dock="Top" Name="btnBrandsPerType" HorizontalAlignment="Stretch" VerticalAlignment="Top" Content="Brands per type" Click="btnBrandsPerType_Click"/>
+            <Button DockPanel.Dock="Top" Name="btnBottlesPerCountry" HorizontalAlignment="Stretch" VerticalAlignment="Top" Content="Bottles per country" Click="btnBottlesPerCountry_Click"/>
+            <Button DockPanel.Dock="Top" Name="btnBottlesPerType" HorizontalAlignment="Stretch" VerticalAlignment="Top" Content="Bottles per type" Click="btnBottlesPerType_Click"/>
+            <Button DockPanel.Dock="Top" Name="btnBottlesPerBrand" HorizontalAlignment="Stretch" VerticalAlignment="Top" Content="Bottles per brand" Click="btnBottlesPerBrand_Click"/>
+        </DockPanel>
+        <WindowsFormsHost Name="whRep" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="3"/>
+    </Grid>
+</Window>

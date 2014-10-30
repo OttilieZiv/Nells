@@ -1,0 +1,101 @@
+﻿
+@model  PagedList.IPagedList<NellsWeb.Models.bottle>
+@using PagedList.Mvc
+
+@*@model IEnumerable<NellsWeb.Models.bottle>*@
+
+@{
+    ViewBag.Title = "Bottles";
+}
+
+<h2>Bottles</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+@using (Html.BeginForm("Index","Bottle",FormMethod.Get))
+{
+    <p>
+        Find by brand or polish name: @Html.TextBox("SearchString")
+        <input type="submit" value="Search" />
+    </p>
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.ActionLink("ID", "Index", new { sortOrder = ViewBag.IDSortParm })
+        </th>
+        <th>
+            @Html.ActionLink("Brand name", "Index", new { sortOrder = ViewBag.BrandSortParm })
+        </th>
+        <th>
+            @Html.ActionLink("Polish name", "Index", new { sortOrder = ViewBag.NameSortParm })
+        </th>
+        <th>
+            Description
+        </th>
+        <th>
+           Swatch Notes
+        </th>
+        <th>
+            Coats on swatch
+        </th>
+        <th>
+            @Html.ActionLink("Date acquired", "Index", new { sortOrder = ViewBag.DateSortParm })
+        </th>
+        <th>
+           Used?
+        </th>
+        <th>
+            Goony?
+        </th>
+        <th>
+            Drawer
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.brand.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SwatchNotes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SwatchCoats)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateAcquired)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Used)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Goon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.drawer.DrawerName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>

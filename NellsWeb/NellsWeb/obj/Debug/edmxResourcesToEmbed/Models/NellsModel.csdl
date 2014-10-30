@@ -1,0 +1,296 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NellsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="bottle">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BrandID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="45" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="SwatchNotes" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SwatchCoats" Type="Int32" />
+    <Property Name="SwatchDrawer" Type="Int32" />
+    <Property Name="DateAcquired" Type="DateTime" Precision="0" />
+    <Property Name="Used" Type="Boolean" Nullable="false" />
+    <Property Name="Purged" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="brand" Relationship="Self.FK_bottles_brands" FromRole="bottles" ToRole="brands" />
+    <NavigationProperty Name="drawer" Relationship="Self.FK_bottles_drawers" FromRole="bottles" ToRole="drawers" />
+    <NavigationProperty Name="bottletaglookups" Relationship="Self.FK_bottletaglookup_bottles" FromRole="bottles" ToRole="bottletaglookup" />
+    <NavigationProperty Name="notes" Relationship="Self.FK_notes_bottles" FromRole="bottles" ToRole="notes" />
+    <Property Name="Goon" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="bottletaglookup">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BottleID" Type="Int32" Nullable="false" />
+    <Property Name="TagID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="bottle" Relationship="Self.FK_bottletaglookup_bottles" FromRole="bottletaglookup" ToRole="bottles" />
+    <NavigationProperty Name="bottletag" Relationship="Self.FK_bottletaglookup_bottletags" FromRole="bottletaglookup" ToRole="bottletags" />
+  </EntityType>
+  <EntityType Name="bottletag">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TagName" Type="String" MaxLength="45" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TagType" Type="Int32" />
+    <NavigationProperty Name="bottletaglookups" Relationship="Self.FK_bottletaglookup_bottletags" FromRole="bottletags" ToRole="bottletaglookup" />
+    <NavigationProperty Name="bottletagtype" Relationship="Self.FK_bottletags_bottletagtypes" FromRole="bottletags" ToRole="bottletagtypes" />
+  </EntityType>
+  <EntityType Name="bottletagtype">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Type" Type="String" MaxLength="45" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="bottletags" Relationship="Self.FK_bottletags_bottletagtypes" FromRole="bottletagtypes" ToRole="bottletags" />
+  </EntityType>
+  <EntityType Name="brand">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="45" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OriginCountry" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Type" Type="String" MaxLength="45" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="bottles" Relationship="Self.FK_bottles_brands" FromRole="brands" ToRole="bottles" />
+    <NavigationProperty Name="lemmings" Relationship="Self.FK_lemmings_brands" FromRole="brands" ToRole="lemmings" />
+    <NavigationProperty Name="ordereds" Relationship="Self.FK_ordered_brands" FromRole="brands" ToRole="ordered" />
+  </EntityType>
+  <EntityType Name="drawer">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DrawerName" Type="String" MaxLength="45" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="bottles" Relationship="Self.FK_bottles_drawers" FromRole="drawers" ToRole="bottles" />
+  </EntityType>
+  <EntityType Name="lemming">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BrandID" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="45" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Notes" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="LustLevel" Type="Int32" Nullable="false" />
+    <Property Name="Killed" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="brand" Relationship="Self.FK_lemmings_brands" FromRole="lemmings" ToRole="brands" />
+  </EntityType>
+  <EntityType Name="note">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BottleID" Type="Int32" Nullable="false" />
+    <Property Name="NoteDate" Type="DateTime" Precision="0" />
+    <Property Name="NoteText" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="bottle" Relationship="Self.FK_notes_bottles" FromRole="notes" ToRole="bottles" />
+  </EntityType>
+  <EntityType Name="ordered">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BrandID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="45" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Notes" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="DateOrdered" Type="DateTime" Precision="0" />
+    <Property Name="Received" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="brand" Relationship="Self.FK_ordered_brands" FromRole="ordered" ToRole="brands" />
+  </EntityType>
+  <Association Name="FK_bottles_brands">
+    <End Role="brands" Type="Self.brand" Multiplicity="1" />
+    <End Role="bottles" Type="Self.bottle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="brands">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="bottles">
+        <PropertyRef Name="BrandID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_bottles_drawers">
+    <End Role="drawers" Type="Self.drawer" Multiplicity="0..1" />
+    <End Role="bottles" Type="Self.bottle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="drawers">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="bottles">
+        <PropertyRef Name="SwatchDrawer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_bottletaglookup_bottles">
+    <End Role="bottles" Type="Self.bottle" Multiplicity="1" />
+    <End Role="bottletaglookup" Type="Self.bottletaglookup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="bottles">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="bottletaglookup">
+        <PropertyRef Name="BottleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_notes_bottles">
+    <End Role="bottles" Type="Self.bottle" Multiplicity="1" />
+    <End Role="notes" Type="Self.note" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="bottles">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="notes">
+        <PropertyRef Name="BottleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_bottletaglookup_bottletags">
+    <End Role="bottletags" Type="Self.bottletag" Multiplicity="1" />
+    <End Role="bottletaglookup" Type="Self.bottletaglookup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="bottletags">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="bottletaglookup">
+        <PropertyRef Name="TagID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_bottletags_bottletagtypes">
+    <End Role="bottletagtypes" Type="Self.bottletagtype" Multiplicity="0..1" />
+    <End Role="bottletags" Type="Self.bottletag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="bottletagtypes">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="bottletags">
+        <PropertyRef Name="TagType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_lemmings_brands">
+    <End Role="brands" Type="Self.brand" Multiplicity="0..1" />
+    <End Role="lemmings" Type="Self.lemming" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="brands">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="lemmings">
+        <PropertyRef Name="BrandID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ordered_brands">
+    <End Role="brands" Type="Self.brand" Multiplicity="1" />
+    <End Role="ordered" Type="Self.ordered" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="brands">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ordered">
+        <PropertyRef Name="BrandID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="NellsEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="bottles" EntityType="Self.bottle" />
+    <EntitySet Name="bottletaglookups" EntityType="Self.bottletaglookup" />
+    <EntitySet Name="bottletags" EntityType="Self.bottletag" />
+    <EntitySet Name="bottletagtypes" EntityType="Self.bottletagtype" />
+    <EntitySet Name="brands" EntityType="Self.brand" />
+    <EntitySet Name="drawers" EntityType="Self.drawer" />
+    <EntitySet Name="lemmings" EntityType="Self.lemming" />
+    <EntitySet Name="notes" EntityType="Self.note" />
+    <EntitySet Name="ordereds" EntityType="Self.ordered" />
+    <AssociationSet Name="FK_bottles_brands" Association="Self.FK_bottles_brands">
+      <End Role="brands" EntitySet="brands" />
+      <End Role="bottles" EntitySet="bottles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_bottles_drawers" Association="Self.FK_bottles_drawers">
+      <End Role="drawers" EntitySet="drawers" />
+      <End Role="bottles" EntitySet="bottles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_bottletaglookup_bottles" Association="Self.FK_bottletaglookup_bottles">
+      <End Role="bottles" EntitySet="bottles" />
+      <End Role="bottletaglookup" EntitySet="bottletaglookups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_notes_bottles" Association="Self.FK_notes_bottles">
+      <End Role="bottles" EntitySet="bottles" />
+      <End Role="notes" EntitySet="notes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_bottletaglookup_bottletags" Association="Self.FK_bottletaglookup_bottletags">
+      <End Role="bottletags" EntitySet="bottletags" />
+      <End Role="bottletaglookup" EntitySet="bottletaglookups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_bottletags_bottletagtypes" Association="Self.FK_bottletags_bottletagtypes">
+      <End Role="bottletagtypes" EntitySet="bottletagtypes" />
+      <End Role="bottletags" EntitySet="bottletags" />
+    </AssociationSet>
+    <AssociationSet Name="FK_lemmings_brands" Association="Self.FK_lemmings_brands">
+      <End Role="brands" EntitySet="brands" />
+      <End Role="lemmings" EntitySet="lemmings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ordered_brands" Association="Self.FK_ordered_brands">
+      <End Role="brands" EntitySet="brands" />
+      <End Role="ordered" EntitySet="ordereds" />
+    </AssociationSet>
+    <FunctionImport Name="RPT_BrandCount" ReturnType="Collection(NellsModel.RPT_BrandCount_Result)" />
+    <FunctionImport Name="RPT_BrandCountSubset" ReturnType="Collection(NellsModel.RPT_BrandCountSubset_Result)">
+      <Parameter Name="startletter" Mode="In" Type="String" />
+      <Parameter Name="endletter" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="RPT_BrandTypeCount" ReturnType="Collection(NellsModel.RPT_BrandTypeCount_Result)" />
+    <FunctionImport Name="RPT_CountryCount" ReturnType="Collection(NellsModel.RPT_CountryCount_Result)" />
+    <FunctionImport Name="RPT_DrawerCount" ReturnType="Collection(NellsModel.RPT_DrawerCount_Result)" />
+    <FunctionImport Name="RPT_FullyUsedBrandList" />
+    <FunctionImport Name="RPT_FullyUsedBrands" ReturnType="Collection(Int32)" />
+    <FunctionImport Name="RPT_TaglessBottles" ReturnType="Collection(NellsModel.RPT_TaglessBottles_Result)">
+      <Parameter Name="p_tagtype" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="RPT_UnusedBrandList" />
+    <FunctionImport Name="RPT_UnusedBrands" ReturnType="Collection(Int32)" />
+  </EntityContainer>
+  <ComplexType Name="RPT_BrandCount_Result">
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="45" />
+    <Property Type="Int64" Name="count" Nullable="true" />
+    <Property Type="Int64" Name="used" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="RPT_BrandCountSubset_Result">
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="45" />
+    <Property Type="Int64" Name="count" Nullable="true" />
+    <Property Type="Int64" Name="used" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="RPT_BrandTypeCount_Result">
+    <Property Type="String" Name="name" Nullable="true" MaxLength="45" />
+    <Property Type="Int64" Name="count" Nullable="true" />
+    <Property Type="Int64" Name="used" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="RPT_CountryCount_Result">
+    <Property Type="String" Name="name" Nullable="true" MaxLength="50" />
+    <Property Type="Int64" Name="count" Nullable="true" />
+    <Property Type="Int64" Name="used" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="RPT_DrawerCount_Result">
+    <Property Type="String" Name="name" Nullable="false" MaxLength="45" />
+    <Property Type="Int64" Name="count" Nullable="true" />
+    <Property Type="Int64" Name="used" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="RPT_TaglessBottles_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="brand" Nullable="false" MaxLength="45" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="45" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="SwatchNotes" Nullable="true" MaxLength="500" />
+    <Property Type="Int32" Name="SwatchCoats" Nullable="true" />
+    <Property Type="Boolean" Name="Used" Nullable="false" />
+    <Property Type="String" Name="drawer" Nullable="true" MaxLength="45" />
+  </ComplexType>
+</Schema>

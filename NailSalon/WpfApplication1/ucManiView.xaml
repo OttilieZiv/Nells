@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="NailSalon.ucManiView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="332" d:DesignWidth="542" xmlns:my="clr-namespace:NailSalon" Loaded="UserControl_Loaded">
+    <UserControl.Resources>
+        <my:DataSet2 x:Key="dataSet2" />
+        <CollectionViewSource x:Key="manicureitemsViewSource" Source="{Binding Path=manicureitems, Source={StaticResource dataSet2}}" />
+    </UserControl.Resources>
+    <Grid DataContext="{StaticResource manicureitemsViewSource}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Row="0">
+            <Label Name="lblName" DockPanel.Dock="Left" HorizontalAlignment="Left" Content="Mani Name" FontSize="24"/>
+            <Label Name="lblWorn" DockPanel.Dock="Right" HorizontalAlignment="Right" VerticalAlignment="Center" Content="Worn it?" FontStyle="Italic"/>
+        </DockPanel>
+        <DockPanel Grid.Row="1">
+            <Label Name="lblType" Content="Mani type:" DockPanel.Dock="Left" HorizontalAlignment="Left"/>
+            <Label Name="lblLength" Content="Nail length:" DockPanel.Dock="Left" HorizontalAlignment="Left"/>
+            <Button Name="btnPics" Content="Pictures" DockPanel.Dock="Right" HorizontalAlignment="Right" Click="btnPics_Click"/>
+        </DockPanel>
+        <TextBlock Name="lblNotes" Text="Initial thoughts go here and could be long" Grid.Row="2" TextWrapping="Wrap"/>
+        <DockPanel Name="dkVerdict" Grid.Row="3">
+            <Label Content="Verdict:" DockPanel.Dock="Left" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <TextBlock Name="lblVerdict" Margin="9" Text="Final verdict goes here and could be long or non existent" DockPanel.Dock="Left" TextWrapping="Wrap"/>
+        </DockPanel>
+        <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" EnableRowVirtualization="True" HorizontalAlignment="Stretch" ItemsSource="{Binding}" Name="dgItems" RowDetailsVisibilityMode="VisibleWhenSelected" VerticalAlignment="Stretch" Grid.Row="4">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="brandNameColumn" Binding="{Binding Path=BrandName}" Header="Brand Name" Width="auto" />
+                <DataGridTextColumn x:Name="bottleNameColumn" Binding="{Binding Path=BottleName}" Header="Bottle Name" Width="auto" />
+                <DataGridTextColumn x:Name="orderColumn" Binding="{Binding Path=Order}" Header="Order" Width="SizeToHeader" />
+                <DataGridTextColumn x:Name="usageColumn" Binding="{Binding Path=Usage}" Header="Usage" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

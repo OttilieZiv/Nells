@@ -1,0 +1,69 @@
+﻿<Window x:Class="NailSalon.LemmingBrowser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Lemming Browser" Height="356" Width="648" xmlns:my="clr-namespace:NailSalon" Loaded="Window_Loaded" WindowState="Maximized" xmlns:my1="clr-namespace:NailSalon.Usercontrols">
+    <Window.Resources>
+        <my:DataSet2 x:Key="dataSet2" />
+        <CollectionViewSource x:Key="lemListViewSource" Source="{Binding Path=LemList, Source={StaticResource dataSet2}}" />
+    </Window.Resources>
+    <Grid Name="grid1" DataContext="{StaticResource lemListViewSource}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Name="grid2" Grid.Row="0" Visibility="Visible">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Column="0" Grid.Row="0" Content="Brand:" HorizontalAlignment="Right"/>
+            <Label Grid.Column="0" Grid.Row="1" Content="Name:" HorizontalAlignment="Right"/>
+            <Label Grid.Column="0" Grid.Row="2" Content="Description:" HorizontalAlignment="Right"/>
+            <Label Grid.Column="0" Grid.Row="3" Content="Notes:" HorizontalAlignment="Right"/>
+            <Label Grid.Column="0" Grid.Row="4" Content="Lust level:" HorizontalAlignment="Right"/>
+            <my1:ucBrandPickerWithAdd Grid.Column="1" Grid.Row="0" x:Name="cmbBrand" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TabIndex="0"/>
+            <TextBox Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" Name="txtName" VerticalAlignment="Stretch" Margin="3" TabIndex="1"/>
+            <TextBox Grid.Column="1" Grid.Row="2" HorizontalAlignment="Stretch" Name="txtDesc" VerticalAlignment="Stretch" Margin="3" TabIndex="2"/>
+            <TextBox Grid.Column="1" Grid.Row="3" HorizontalAlignment="Stretch" Name="txtNotes" VerticalAlignment="Stretch"  Margin="3" TabIndex="3" AcceptsReturn="True" TextWrapping="Wrap" />
+            <TextBox Grid.Column="1" Grid.Row="4" HorizontalAlignment="Stretch" Name="txtLustLevel" VerticalAlignment="Stretch" Margin="3" TabIndex="4"/>
+            <Button Name="btnSave" Grid.Column="2" Grid.Row="1" Content="SAVE" Margin="3" Click="btnSave_Click" TabIndex="7"/>
+            <Button Name="btnCancel" Grid.Column="2" Grid.Row="2" Content="Cancel" Margin="3" Click="btnCancel_Click" TabIndex="8"/>
+            
+        </Grid>
+        <CheckBox Name="cbxShowKilled" Content="Show dead lemmings" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Checked="cbxShowKilled_Checked" Unchecked="cbxShowKilled_Checked"/>
+        <DataGrid Name="dgLemmings" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="3" RowDetailsVisibilityMode="VisibleWhenSelected" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" Loaded="dgLemmings_Loaded">
+            <DataGrid.AlternatingRowBackground>
+                <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                    <GradientStop Color="#220069FF" Offset="0" />
+                    <GradientStop Color="#89BCFFA6" Offset="0.738" />
+                </LinearGradientBrush>
+            </DataGrid.AlternatingRowBackground>
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="brandColumn" Binding="{Binding Path=BrandName}" Header="Brand" Width="130" />
+                <DataGridTextColumn x:Name="nameColumn1" Binding="{Binding Path=Name}" Header="Name" Width="170" />
+                <DataGridTextColumn x:Name="descriptionColumn1" Binding="{Binding Path=Description}" Header="Description" Width="300" />
+                <DataGridTextColumn x:Name="lustLevelColumn" Binding="{Binding Path=LustLevel}" Header="Lust Level" Width="90"/>
+                <DataGridTextColumn x:Name="notesColumn1" Binding="{Binding Path=notes}" Header="Notes" Width="*" />
+            </DataGrid.Columns>
+            <DataGrid.ContextMenu>
+                <ContextMenu Name="cmnuGrid">
+                    <MenuItem Name="btnTransfer" Header="Transfer to inventory" Click="btnTransfer_Click" />
+                    <MenuItem Name="btnOrdered" Header="Ordered" Click="btnOrdered_Click"/>
+                    <MenuItem Name="btnKill" Header="Killed by other means" Click="btnKill_Click"/>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+        </DataGrid>
+    </Grid>
+</Window>

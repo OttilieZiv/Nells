@@ -1,0 +1,11 @@
+﻿<Window x:Class="NailSalon.BrandCollection"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="BrandCollection" Height="450" Width="674">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TabControl Name="tbMain" Grid.Row="0"/>
+    </Grid>
+</Window>

@@ -1,0 +1,45 @@
+﻿<Window x:Class="NailSalon.EditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Edit Window" Height="271" Width="551" WindowState="Normal" Name="AddEditWindow" Loaded="EditWindow_Loaded" xmlns:my="clr-namespace:NailSalon.Usercontrols" ContentRendered="AddEditWindow_ContentRendered">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>  
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Column="0" Grid.Row="0" Content="Brand:" HorizontalAlignment="Right"/>
+        <Label Grid.Column="0" Grid.Row="1" Content="Name:" HorizontalAlignment="Right"/>
+        <Label Grid.Column="0" Grid.Row="2" Content="Description:" HorizontalAlignment="Right"/>
+        <Label Grid.Column="0" Grid.Row="3" Content="Acquired:" HorizontalAlignment="Right"/>
+        <Label Grid.Column="0" Grid.Row="4" Content="Coats on swatch:" HorizontalAlignment="Right"/>
+        <Label Grid.Column="0" Grid.Row="5" Content="Swatching notes:" HorizontalAlignment="Right"/>
+        <my:ucBrandPickerWithAdd Grid.Column="1" Grid.Row="0" x:Name="cmbBrand" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TabIndex="0"/>
+        <TextBox Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" Name="txtName" VerticalAlignment="Stretch" TabIndex="1"/>
+        <TextBox Grid.Column="1" Grid.Row="2" HorizontalAlignment="Stretch" Name="txtDesc" VerticalAlignment="Stretch" TabIndex="2"/>
+        <TextBox Grid.Column="1" Grid.Row="5" HorizontalAlignment="Stretch" Name="txtNotes" VerticalAlignment="Stretch" TabIndex="8" AcceptsReturn="True" TextWrapping="Wrap" />
+        <DockPanel Grid.Column="1" Grid.Row="4" HorizontalAlignment="Stretch" Name="dockPanel1" VerticalAlignment="Stretch">
+            <TextBox Name="txtCoats" DockPanel.Dock="Left" Width="40" TabIndex="5"/>
+            <Label Content="Drawer:" DockPanel.Dock="Left" />
+            <ComboBox Name="cmbDrawer" DockPanel.Dock="Left" Width="100" TabIndex="6"/>
+            <CheckBox Name="cbxUsed" Content="?Used it yet" DockPanel.Dock="Right" Margin="3" TabIndex="7" VerticalAlignment="Center" HorizontalAlignment="Right" HorizontalContentAlignment="Right" FlowDirection="RightToLeft" />
+        </DockPanel>
+        <Button Name="btnTags" Grid.Row="4" Grid.Column="2" Content="Tags" Click="btnTags_Click" />
+        <DockPanel Grid.Column="1" Grid.Row="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <CheckBox Name="cbxAcDateKnown" TabIndex="3" Content="Known" DockPanel.Dock="Left" HorizontalAlignment="Left" VerticalAlignment="Center" FlowDirection="LeftToRight" Margin="3" Checked="cbxAcDateKnown_Checked" Unchecked="cbxAcDateKnown_Unchecked" />                      
+            <DatePicker Name="dpAcquired" DockPanel.Dock="Left" HorizontalAlignment="Left" Width="150" Margin="3" TabIndex="4"/>
+        </DockPanel>
+        <Button Name="btnSave" Grid.Column="2" Grid.Row="1" Content="SAVE" Click="btnSave_Click" TabIndex="10"/>
+        <Button Name="btnCancel" Grid.Column="2" Grid.Row="2" Content="Cancel" Click="btnCancel_Click" TabIndex="11"/>
+        <Button Name="btnIRLNotes" Grid.Column="2" Grid.Row="5" Content="IRL..." VerticalAlignment="Bottom" TabIndex="9" Click="btnIRLNotes_Click" />
+        
+    </Grid>
+</Window>

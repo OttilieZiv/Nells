@@ -1,0 +1,40 @@
+﻿<Window x:Class="NailSalon.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Main" Height="350" Width="638" WindowStyle="SingleBorderWindow" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Column="0" Grid.Row="0" Content="The Stash" FontSize="18" DataContext="{Binding}"></Label>
+        <Button Name="btnBrowse" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" Content="Browse stash" Click="btnBrowse_Click" />
+        <Button Name="btnAdd" Grid.Column="2" Grid.Row="2" Content="Add to stash" Click="btnAdd_Click" />
+        <Button Name="btnGeekOut" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="1" Content="Statisticiser" Click="btnGeekOut_Click" />
+        <Button Name="btnOrdered" Grid.Column="1" Grid.Row="2" Content="Ordered" Click="btnOrdered_Click" />
+        <Button Name="btnLemmings" Grid.Column="0"  Grid.Row="2" Content="Lemmings" Click="btnLemmings_Click"/>
+        <Button Name="btnManiPlan" Grid.Column="3" Grid.Row="2" Content="Planicures" Click="btnManiPlan_Click"/>
+        <Viewbox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" Margin="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Label Name="lblCount" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="3" Content="Count:" FontStyle="Normal" />
+        </Viewbox>
+        <ProgressBar Name="prgUsed" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="4" Height="70" VerticalAlignment="Center" Margin="10">
+            <ProgressBar.Foreground>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FF586BA0" Offset="1" />
+                    <GradientStop Color="#FF111155" Offset="0" />
+                </RadialGradientBrush>
+            </ProgressBar.Foreground>
+        </ProgressBar>
+        <Label Name="lblUsed" Content="Used" Grid.Row="4" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" Opacity="60" FontSize="22" />
+        <Label Name="lblUnused" Content="Unused" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center" Opacity="60"  FontSize="22"/>
+    </Grid>
+</Window>

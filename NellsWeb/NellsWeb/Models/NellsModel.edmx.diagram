@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="be8d477c06b04cc78846461efb95fc62" Name="Diagram1">
+        <EntityTypeShape EntityType="NellsModel.bottle" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="NellsModel.bottletaglookup" Width="1.5" PointX="5.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NellsModel.bottletag" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NellsModel.bottletagtype" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NellsModel.brand" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NellsModel.drawer" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="NellsModel.lemming" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NellsModel.note" Width="1.5" PointX="5.25" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NellsModel.ordered" Width="1.5" PointX="3" PointY="12.625" IsExpanded="true" />
+        <AssociationConnector Association="NellsModel.FK_bottles_brands" ManuallyRouted="false" />
+        <AssociationConnector Association="NellsModel.FK_bottles_drawers" ManuallyRouted="false" />
+        <AssociationConnector Association="NellsModel.FK_bottletaglookup_bottles" ManuallyRouted="false" />
+        <AssociationConnector Association="NellsModel.FK_notes_bottles" ManuallyRouted="false" />
+        <AssociationConnector Association="NellsModel.FK_bottletaglookup_bottletags" ManuallyRouted="false" />
+        <AssociationConnector Association="NellsModel.FK_bottletags_bottletagtypes" ManuallyRouted="false" />
+        <AssociationConnector Association="NellsModel.FK_lemmings_brands" ManuallyRouted="false" />
+        <AssociationConnector Association="NellsModel.FK_ordered_brands" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
